@@ -3,6 +3,8 @@ extends CharacterBody2D
 var speed = 1000
 const rcene = preload("res://scenes/rocket.tscn")
 
+@onready var rcontainer = $RocketContainer
+
 func _physics_process(delta: float) -> void:
 	velocity = Vector2(0, 0)
 
@@ -26,5 +28,6 @@ func _process(delta: float) -> void:
 
 func shoot() -> void:
 	var rinstance := rcene.instantiate() as Area2D
+	rinstance.global_position = global_position
 	rinstance.global_position.x += 60
-	add_child(rinstance)
+	rcontainer.add_child(rinstance)
