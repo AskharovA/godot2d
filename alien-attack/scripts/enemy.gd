@@ -5,5 +5,9 @@ extends Area2D
 func _physics_process(delta: float) -> void:
 	global_position.x -= delta * speed
 
-func free() -> void:
+func remove() -> void:
 	queue_free()
+
+func _on_body_entered(body: Node2D) -> void:
+	body.take_damage()
+	remove()

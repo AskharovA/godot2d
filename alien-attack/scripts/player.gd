@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal took_damage
+
 var speed = 1000
 const rcene = preload("res://scenes/rocket.tscn")
 
@@ -31,3 +33,9 @@ func shoot() -> void:
 	rinstance.global_position = global_position
 	rinstance.global_position.x += 60
 	rcontainer.add_child(rinstance)
+
+func take_damage() -> void:
+	emit_signal("took_damage")
+
+func remove() -> void:
+	queue_free()

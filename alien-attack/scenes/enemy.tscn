@@ -33,3 +33,5 @@ shape = SubResource("CircleShape2D_cvpeo")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=620925879]
 position = Vector2(10, 27)
 shape = SubResource("CircleShape2D_cvpeo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
