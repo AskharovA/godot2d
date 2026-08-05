@@ -8,6 +8,7 @@ radius = 21.0
 height = 96.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1961837033]
+collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_g2els")
 

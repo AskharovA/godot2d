@@ -11,6 +11,8 @@ height = 108.0
 radius = 14.0
 
 [node name="Enemy" type="Area2D" unique_id=499815920]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_md0e3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2022853975]
