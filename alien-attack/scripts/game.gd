@@ -8,12 +8,14 @@ var score: int = 0
 
 func _ready():
 	hud.set_score_label(score)
+	hud.set_lives(lives)
 
 func _on_deathzone_area_entered(area: Area2D) -> void:
 	area.free()
 
 func _on_player_took_damage() -> void:
 	lives -= 1
+	hud.set_lives(lives)
 	if lives <= 0:
 		print("Game Over!")
 		player.remove()
