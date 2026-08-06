@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://ck42kgbadnj28"]
+
+[ext_resource type="Script" uid="uid://dij1o1g27y25j" path="res://scripts/game_over_screen.gd" id="1_iwahs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvpeo"]
+bg_color = Color(0.72, 0.1368, 0.1368, 0.78431374)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_cvpeo"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_4xo42"]
+font_size = 48
+font_color = Color(0, 1, 0.9333334, 1)
+
+[node name="GameOverScreen" type="Control" unique_id=1759206781]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iwahs")
+
+[node name="Panel" type="Panel" parent="." unique_id=208840311]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.24744
+offset_top = -171.0
+offset_right = 273.24744
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cvpeo")
+
+[node name="GameOver" type="Label" parent="Panel" unique_id=537762413]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.10233918
+anchor_right = 0.5
+anchor_bottom = 0.10233918
+offset_left = -183.0
+offset_right = 183.0
+offset_bottom = 88.0
+grow_horizontal = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_cvpeo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Label" parent="Panel" unique_id=1867435185]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.44716495
+anchor_right = 0.5
+anchor_bottom = 0.44716495
+offset_left = -137.0
+offset_top = -33.5
+offset_right = 137.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "SCORE 9999"
+label_settings = SubResource("LabelSettings_4xo42")
+metadata/_edit_use_anchors_ = true
+
+[node name="RetryButton" type="Button" parent="Panel" unique_id=158912933]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36276174
+anchor_top = 0.7076023
+anchor_right = 0.63723826
+anchor_bottom = 0.8011696
+offset_left = -28.0
+offset_top = -31.0
+offset_right = 28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "RETRY"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Panel/RetryButton" to="." method="_on_retry_button_pressed"]

@@ -37,5 +37,5 @@ func shoot() -> void:
 func take_damage() -> void:
 	emit_signal("took_damage")
 
-func remove() -> void:
+func die() -> void:
 	queue_free()
