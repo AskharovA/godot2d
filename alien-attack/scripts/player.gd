@@ -6,6 +6,7 @@ var speed = 1000
 const rcene = preload("res://scenes/rocket.tscn")
 
 @onready var rcontainer = $RocketContainer
+@onready var rocket_shot_sound = $RocketShotSound
 
 func _physics_process(delta: float) -> void:
 	velocity = Vector2(0, 0)
@@ -33,6 +34,7 @@ func shoot() -> void:
 	rinstance.global_position = global_position
 	rinstance.global_position.x += 60
 	rcontainer.add_child(rinstance)
+	rocket_shot_sound.play()
 
 func take_damage() -> void:
 	emit_signal("took_damage")
