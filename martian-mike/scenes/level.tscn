@@ -7,14 +7,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvpeo"]
 size = Vector2(1004, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4euj4"]
+size = Vector2(1416, 20)
+
 [node name="Level" type="Node2D" unique_id=1295873803]
 script = ExtResource("1_2q6dc")
 
 [node name="Player" parent="." unique_id=2075455184 instance=ExtResource("2_w7c3h")]
-position = Vector2(236, 147)
+position = Vector2(211, 185)
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=25043604]
-position = Vector2(-82, 207)
+position = Vector2(-82, 245)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=2135419089]
 modulate = Color(0, 0, 0, 1)
@@ -23,3 +26,16 @@ texture = ExtResource("3_w8frs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=801986767]
 shape = SubResource("RectangleShape2D_cvpeo")
+
+[node name="Deathzone" type="Area2D" parent="." unique_id=594305606]
+position = Vector2(0, 338)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone" unique_id=1586754820]
+shape = SubResource("RectangleShape2D_4euj4")
+
+[node name="StartPosition" type="Marker2D" parent="." unique_id=770133066]
+position = Vector2(316, 167)
+
+[connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
