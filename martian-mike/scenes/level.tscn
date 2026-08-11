@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6hntm6m1kkey" path="res://scripts/level.gd" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://d0liywmywp6ur" path="res://scenes/bg.tscn" id="2_b121j"]
+[ext_resource type="PackedScene" uid="uid://dqcidrv8gx6lu" path="res://scenes/level_2.tscn" id="2_t1rx8"]
 [ext_resource type="PackedScene" uid="uid://c5hg7lddiimbq" path="res://scenes/player.tscn" id="2_w7c3h"]
 [ext_resource type="Texture2D" uid="uid://dqoaktxad8s4" path="res://icon.svg" id="3_w8frs"]
 [ext_resource type="PackedScene" uid="uid://bl7inl4cv3pi1" path="res://scenes/jump_pad.tscn" id="4_mx8sn"]
@@ -19,6 +20,7 @@ size = Vector2(1914, 20)
 
 [node name="Level" type="Node2D" unique_id=1295873803]
 script = ExtResource("1_2q6dc")
+next_level = ExtResource("2_t1rx8")
 
 [node name="BG" parent="." unique_id=564587187 instance=ExtResource("2_b121j")]
 
