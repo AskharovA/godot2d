@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://4otdebl7vy6w" path="res://scenes/spike_ball.tscn" id="5_2r41h"]
 [ext_resource type="PackedScene" uid="uid://bi4oav7fev7if" path="res://scenes/tile_map.tscn" id="7_klq6b"]
 [ext_resource type="PackedScene" uid="uid://c4whvwpsbxky6" path="res://scenes/start.tscn" id="9_8c41q"]
+[ext_resource type="PackedScene" uid="uid://cf0o4vaclcb5e" path="res://scenes/exit.tscn" id="10_olg7q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvpeo"]
 size = Vector2(1004, 20)
@@ -20,9 +21,6 @@ size = Vector2(1914, 20)
 script = ExtResource("1_2q6dc")
 
 [node name="BG" parent="." unique_id=564587187 instance=ExtResource("2_b121j")]
-
-[node name="Player" parent="." unique_id=2075455184 groups=["player"] instance=ExtResource("2_w7c3h")]
-position = Vector2(186, 175)
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=25043604]
 position = Vector2(-82, 292)
@@ -75,5 +73,11 @@ layer_0/tile_data = PackedInt32Array(983034, 393218, 0, 1048570, 393218, 1, 1114
 
 [node name="Start" parent="." unique_id=2066149608 instance=ExtResource("9_8c41q")]
 position = Vector2(71, 224)
+
+[node name="Exit" parent="." unique_id=1200187370 instance=ExtResource("10_olg7q")]
+position = Vector2(272, 224)
+
+[node name="Player" parent="." unique_id=2075455184 groups=["player"] instance=ExtResource("2_w7c3h")]
+position = Vector2(186, 175)
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
