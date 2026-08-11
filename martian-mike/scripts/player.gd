@@ -7,7 +7,7 @@ class_name Player
 
 @onready var animated_sprite = $AnimatedSprite2D
 
-var active = true
+var active: bool = true
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
