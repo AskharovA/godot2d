@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bi4oav7fev7if" path="res://scenes/tile_map.tscn" id="7_klq6b"]
 [ext_resource type="PackedScene" uid="uid://c4whvwpsbxky6" path="res://scenes/start.tscn" id="9_8c41q"]
 [ext_resource type="PackedScene" uid="uid://cf0o4vaclcb5e" path="res://scenes/exit.tscn" id="10_olg7q"]
+[ext_resource type="PackedScene" uid="uid://ckwncc7mrxo7w" path="res://scenes/ui_layer.tscn" id="12_8iemx"]
 
 [node name="Level" type="Node2D" unique_id=1295873803]
 script = ExtResource("1_2q6dc")
@@ -58,5 +59,7 @@ position = Vector2(272, 224)
 
 [node name="Player" parent="." unique_id=2075455184 groups=["player"] instance=ExtResource("2_w7c3h")]
 position = Vector2(186, 175)
+
+[node name="UILayer" parent="." unique_id=2045568645 instance=ExtResource("12_8iemx")]
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
