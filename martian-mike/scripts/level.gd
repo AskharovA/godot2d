@@ -1,11 +1,15 @@
 extends Node2D
 
 @export var next_level: PackedScene
+@export var level_time: int = 5
 
 @onready var start = $Start
 @onready var exit = $Exit
 
 var player = null
+var timer_node = null
+var time_left: int
+var win: bool = false
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
@@ -16,10 +20,25 @@ func _ready() -> void:
 	var traps = get_tree().get_nodes_in_group("traps")
 	
 	for trap in traps:
-		#trap.connect("touched_player", _on_trap_touched_player)
 		trap.touched_player.connect(_on_trap_touched_player)
 
 	exit.connect("body_entered", _on_exit_body_entered)
+	
+	time_left = level_time
+	timer_node = Timer.new()
+	timer_node.name = "Level Timer"
+	timer_node.wait_time = 1
+	timer_node.timeout.connect(_on_level_timer_timeout)	
+	add_child(timer_node)
+	timer_node.start()
+
+func _on_level_timer_timeout() -> void:
+	if win: return
+
+	time_left -= 1
+	if time_left < 0:
+		reset_player()
+		time_left = level_time
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("quit"):
@@ -40,6 +59,7 @@ func reset_player() -> void:
 func _on_exit_body_entered(body: Node2D) -> void:
 	if body is Player:
 		if next_level == null: return
+		win = true
 		exit.animate()
 		player.active = false
 		await get_tree().create_timer(1.5).timeout
