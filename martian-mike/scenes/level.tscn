@@ -16,6 +16,7 @@
 [node name="Level" type="Node2D" unique_id=1295873803]
 script = ExtResource("1_2q6dc")
 next_level = ExtResource("2_t1rx8")
+level_time = 20
 
 [node name="BG" parent="." unique_id=564587187 instance=ExtResource("2_b121j")]
 
@@ -55,7 +56,7 @@ layer_0/tile_data = PackedInt32Array(983034, 393218, 0, 1048570, 393218, 1, 1114
 position = Vector2(71, 224)
 
 [node name="Exit" parent="." unique_id=1200187370 instance=ExtResource("10_olg7q")]
-position = Vector2(272, 224)
+position = Vector2(1197, 112)
 
 [node name="Player" parent="." unique_id=2075455184 groups=["player"] instance=ExtResource("2_w7c3h")]
 position = Vector2(186, 175)
