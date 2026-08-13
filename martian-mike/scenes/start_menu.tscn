@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://d0liywmywp6ur" path="res://scenes/bg.tscn" id="1_thu50"]
 [ext_resource type="Texture2D" uid="uid://d3ixvrt24tlfs" path="res://assets/textures/bg/Pink.png" id="2_m7x51"]
 [ext_resource type="FontFile" uid="uid://dd7kavxf0o8y7" path="res://assets/fonts/Kenney Pixel Square.ttf" id="3_m7x51"]
-[ext_resource type="AudioStream" uid="uid://bj736b5y72k7t" path="res://assets/audio/music.ogg" id="5_fcv5n"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4euj4"]
 font = ExtResource("3_m7x51")
@@ -75,10 +74,6 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_m7x51")
 theme_override_font_sizes/font_size = 10
 text = "QUIT"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1468909500]
-stream = ExtResource("5_fcv5n")
-autoplay = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
