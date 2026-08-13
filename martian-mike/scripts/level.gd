@@ -55,9 +55,11 @@ func _process(delta: float) -> void:
 		get_tree().reload_current_scene()
 
 func _on_deathzone_body_entered(body: Node2D) -> void:
+	AudioPlayer.play_sfx("hurt")
 	reset_player()
 
 func _on_trap_touched_player() -> void:
+	AudioPlayer.play_sfx("hurt")
 	reset_player()
 
 func reset_player() -> void:
